@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://azure.github.io/AppService/feed.xml" rel="self" type="application/atom+xml" /><link href="https://azure.github.io/AppService/" rel="alternate" type="text/html" hreflang="en_US" /><updated>2022-06-28T00:10:59+00:00</updated><id>https://azure.github.io/AppService/feed.xml</id><title type="html">Azure App Service</title><subtitle>Announcements, updates, and release notes from the Azure App Service product team.</subtitle><author><name>Azure App Service</name></author><entry><title type="html">Announcing Resiliency Score Report for Azure Web Apps</title><link href="https://azure.github.io/AppService/2022/06/16/Announcing-Resiliency-Score-Report-for-Azure-Web-Apps.html" rel="alternate" type="text/html" title="Announcing Resiliency Score Report for Azure Web Apps" /><published>2022-06-16T00:00:00+00:00</published><updated>2022-06-16T00:00:00+00:00</updated><id>https://azure.github.io/AppService/2022/06/16/Announcing-Resiliency-Score-Report-for-Azure-Web-Apps</id><content type="html" xml:base="https://azure.github.io/AppService/2022/06/16/Announcing-Resiliency-Score-Report-for-Azure-Web-Apps.html">&lt;p class=&quot;text-justify&quot;&gt;Resiliency Score report is a downloadable report that checks whether your Azure Web App is implementing the best practices to make it less susceptible to availability issues.&lt;/p&gt;
+
+&lt;p class=&quot;text-justify&quot;&gt;The report doesn’t review your Web App’s code, instead it focuses on the recommended settings and the features available to make your App Service more resilient to failures.&lt;/p&gt;
+
+&lt;p class=&quot;text-justify&quot;&gt;Currently, it’s only available for Web App (Windows) running on Standard plans or higher. More products will be included in the future.&lt;/p&gt;
+
+&lt;h2 id=&quot;accessing-the-report&quot;&gt;Accessing the report&lt;/h2&gt;
+
+&lt;p&gt;You can access the report through the Diagnose and solve problems blade of your Azure App Service:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;In the &lt;a href=&quot;https://portal.azure.com/&quot;&gt;&lt;strong&gt;Azure Portal&lt;/strong&gt;&lt;/a&gt;, click on &lt;strong&gt;App Services&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Click on any Web App (Windows) running in a Standard app service plan or higher&lt;/li&gt;
+  &lt;li&gt;Click on &lt;strong&gt;Diagnose and solve problems&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Click on any of the &lt;strong&gt;Troubleshooting categories&lt;/strong&gt;. For these instructions we’ll use &lt;strong&gt;Availability and Performance&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;In &lt;strong&gt;Availability and Performance&lt;/strong&gt; look for the command bar in the center and towards the top of the blade. Then, click on the &lt;img src=&quot;/AppService/media/2022/06/ResiliencyScoreReport-Button.png&quot; alt=&quot;Get the Resiliency Score&quot; title=&quot;Get the Resiliency Score&quot; /&gt; button. This will generate the report and download it after a few seconds.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;report-structure&quot;&gt;Report structure&lt;/h2&gt;
+
+&lt;p&gt;The report is structured in 3 main sections:&lt;/p&gt;
+
+&lt;h3 id=&quot;resiliency-score&quot;&gt;Resiliency Score&lt;/h3&gt;
+
+&lt;p class=&quot;text-justify&quot;&gt;The score is a number between 0 and 100, where less than 59, means the Web App is rated as poor and more than 80 is rated as excellent. Each feature has different weights, so each will have a different impact on your score.
+A score of 100% doesn’t mean that the Web App will never be down, but rather that it has implemented 100% of our resiliency best practices.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/AppService/media/2022/06/ResiliencyScoreReport-Score.png&quot; alt=&quot;Resiliency Score&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;contributing-factors-table&quot;&gt;Contributing factors table&lt;/h3&gt;
+
+&lt;p class=&quot;text-justify&quot;&gt;This is a general overview of all the features and how well they have been implemented. If the feature is implemented but there are improvements that can be done, it will be marked as “Partially implemented”.
+This table also works as a Table of contents of sorts, as it has links to jump to the details on each feature.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/AppService/media/2022/06/ResiliencyScoreReport-ContributingFactors.png&quot; alt=&quot;Resiliency Score&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;detailed-scores-and-instructions&quot;&gt;Detailed scores and instructions&lt;/h3&gt;
+
+&lt;p&gt;This section intends to explain why this feature is important for you, the current state and provide details on how to implement it.
+Each feature is divided in the following 4 sections:&lt;/p&gt;
+
+&lt;h4 id=&quot;description&quot;&gt;Description&lt;/h4&gt;
+
+&lt;p&gt;This is an explanation of why this feature is necessary.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/AppService/media/2022/06/ResiliencyScoreReport-Details-and-instructions-Description.png&quot; alt=&quot;Resiliency Score&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;status-of-verified-web-apps&quot;&gt;Status of verified Web Apps&lt;/h4&gt;
+
+&lt;p&gt;This table includes the Grade (Fail, N/A (Not Applicable) or Pass) and Comments specific to the implementation of this feature.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/AppService/media/2022/06/ResiliencyScoreReport-Details-and-instructions-Status.png&quot; alt=&quot;Resiliency Score&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;solution&quot;&gt;Solution&lt;/h4&gt;
+
+&lt;p&gt;In here you can find steps to implement the solution through the Azure Portal and when available, through PowerShell and/or Azure CLI.
+We include the steps even if the solution is implemented already, just in case you need them to implement it on other Web Apps.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/AppService/media/2022/06/ResiliencyScoreReport-Details-and-instructions-Solution.png&quot; alt=&quot;Resiliency Score&quot; class=&quot;full&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;more-information&quot;&gt;More information&lt;/h4&gt;
+
+&lt;p&gt;These are links to documents where you can find more details about this feature.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/AppService/media/2022/06/ResiliencyScoreReport-Details-and-instructions-More_information.png&quot; alt=&quot;Resiliency Score&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;learn-more&quot;&gt;Learn More&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://azure.github.io/AppService/2020/05/15/Robust-Apps-for-the-cloud.html#use-multiple-instances&quot; title=&quot;The Ultimate Guide to Running Healthy Apps in the Cloud&quot;&gt;The Ultimate Guide to Running Healthy Apps in the Cloud&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;questionsfeedback&quot;&gt;Questions/Feedback&lt;/h3&gt;
+
+&lt;p&gt;If you have any questions or feedback, please reach out to our team at &lt;a href=&quot;mailto:diagnostics@microsoft.com&quot;&gt;diagnostics@microsoft.com&lt;/a&gt;&lt;/p&gt;</content><author><name>Azure App Service</name></author><category term="Diagnostics" /><summary type="html">Resiliency Score report is a downloadable report that checks whether your Azure Web App is implementing the best practices to make it less susceptible to availability issues.</summary></entry><entry><title type="html">Intro to Microsoft Defender for App Service</title><link href="https://azure.github.io/AppService/2022/06/16/Into-to-microsoft-defender-for-app-service.html" rel="alternate" type="text/html" title="Intro to Microsoft Defender for App Service" /><published>2022-06-16T00:00:00+00:00</published><updated>2022-06-16T00:00:00+00:00</updated><id>https://azure.github.io/AppService/2022/06/16/Into-to-microsoft-defender-for-app-service</id><content type="html" xml:base="https://azure.github.io/AppService/2022/06/16/Into-to-microsoft-defender-for-app-service.html">&lt;p&gt;If you’re an Azure portal user with App Service, you’ve most likely seen the &lt;strong&gt;Security&lt;/strong&gt; item in the left-hand menu. This item comes from our partners from the recently re-branded &lt;a href=&quot;https://docs.microsoft.com/azure/defender-for-cloud/defender-for-cloud-introduction&quot;&gt;Microsoft Defender for Cloud&lt;/a&gt;. If you aren’t familiar with Microsoft Defender for Cloud (formerly Azure Security Center and Azure Defender), it’s a tool for security posture management and threat protection. It aggregates compliance data and continually assesses your environments to give you a summary view of your security posture and allow you to streamline security management not just for your resources in Azure, but also for your resources and environments on-premises as well as in other cloud platforms (Defender for Cloud currently supports integration with AWS and GCP). For more information about Microsoft Defender for Cloud, check out the &lt;a href=&quot;https://docs.microsoft.com/azure/defender-for-cloud/defender-for-cloud-introduction&quot;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/AppService/media/2022/04/AppServiceSecurityBlade.png&quot; alt=&quot;App Service Security blade&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;microsoft-defender-for-app-service&quot;&gt;Microsoft Defender for App Service&lt;/h2&gt;
+
+&lt;h3 id=&quot;without-enhanced-security-features-free&quot;&gt;Without enhanced security features (Free)&lt;/h3&gt;
+
+&lt;p&gt;Microsoft Defender for Cloud is offered in two modes. Without enhanced security features (Free) is enabled for free on all your Azure subscriptions when you visit the workload protection dashboard in the Azure portal for the first time, or if enabled programmatically via API. The free version will not be enabled until you complete one of those actions. Using the free mode provides the secure score and its related features: security policy, continuous security assessment, and actionable security recommendations to help you protect your Azure resources. The below screenshot is a sample of what the free version gives you. As you can see on the left-hand side, there are a number of features that aren’t selectable since they aren’t available with the free version. However, even though they are not selectable from the TOC, you can access the Regulatory Compliance and Inventory blades by clicking on the respective widgets in the dashboard.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/AppService/media/2022/04/DefenderFreeMode.png&quot; alt=&quot;Defender for Cloud without enhanced security features&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The free mode gives you access to your compliance status based on the &lt;a href=&quot;https://docs.microsoft.com/security/benchmark/azure/&quot;&gt;Azure Security Benchmark&lt;/a&gt;. For example, the Azure Security Baseline states that &lt;a href=&quot;https://docs.microsoft.com/security/benchmark/azure/security-controls-v3-data-protection#dp-3-encrypt-sensitive-data-in-transit&quot;&gt;sensitive data should be encrypted in transit&lt;/a&gt;. The below screenshot shows where this control, specifically for App Service, shows up in the Defender for Cloud compliance dashboard. The Azure Security Baseline includes standards for services other than App Service as well to give you full compliance status of your account. To track compliance with other standards, you’ll need to enable the enhanced security features.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/AppService/media/2022/04/DefenderFreeModeComplianceSample.png&quot; alt=&quot;Defender for Cloud compliance sample&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;From the compliance dashboard in Defender, you’ll see exactly which benchmarks your environment fails to meet. Selecting one of the controls will show you which resources are failing the compliance check as well as in many cases give you a “Quick Fix” to make your resources compliant.&lt;/p&gt;
+
+&lt;p&gt;Heading back to the &lt;strong&gt;Security&lt;/strong&gt; blade for your App Service, after enabling Defender, and therefore the Azure Security Benchmark, under Recommendations, you’ll now see the App Service specific controls from the Azure Security Benchmark where your app fails to be compliant. If you don’t see any recommendations, your app is either fully compliant with the Azure Security Benchmark or you haven’t given the platform enough time to complete its assessment and update the portal (this can take up to 24 hours). You’ll additionally see a severity recommendation for each control based on the priority the Azure Security Benchmark, which gives you a good sense of which controls you should most likely enable. Note that if you have enabled any custom policies in Azure Policy based off of the controls associated with the Azure Security Benchmark, they won’t show up in the Recommendations or in the Defender compliance dashboard. At this time, only “built-in” policies are supported. Additionally, you won’t see any alerts under “Security incidents and alerts” in the Security blade since that is a not a feature of the free version.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/AppService/media/2022/04/AppServiceSecurityBladeFull.png&quot; alt=&quot;App Service Security blade sample&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;with-enhanced-security-features&quot;&gt;With enhanced security features&lt;/h3&gt;
+
+&lt;p&gt;Defender for Cloud with all enhanced security features extends the capabilities of the free mode and allows you to include workloads running in private and other public clouds, providing unified security management and threat protection across your hybrid cloud workloads. For more information on the two modes, see the &lt;a href=&quot;https://docs.microsoft.com/azure/defender-for-cloud/enhanced-security-features-overview&quot;&gt;enhanced security features documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you choose to use the enhanced security features, Defender for Cloud offers specific plans dedicated to various Azure services including one for App Service called &lt;a href=&quot;https://docs.microsoft.com/azure/defender-for-cloud/defender-for-app-service-introduction&quot;&gt;Microsoft Defender for App Service&lt;/a&gt;. In addition to the benefits you get from the enhanced security features, enabling Defender for App Service increases your security posture by assessing the resources covered by your App Service plan and generating security recommendations based on its findings. It also monitors the underlying logs and infrastructure that customers don’t typically have access to since App Service is a fully managed platform. To learn more about the benefits of Defender for App Service, see &lt;a href=&quot;https://docs.microsoft.com/azure/defender-for-cloud/defender-for-app-service-introduction&quot;&gt;protecting your web apps and APIs&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;things-to-consider&quot;&gt;Things to consider&lt;/h2&gt;
+
+&lt;p&gt;If the built-in policies that make up the Azure Security Benchmark and other compliance standards don’t meet your compliance standards, you can &lt;a href=&quot;https://docs.microsoft.com/azure/governance/policy/tutorials/create-custom-policy-definition&quot;&gt;create custom policies in Azure Policy&lt;/a&gt;. Custom policies however will not show up under the recommendations in the Security blade and in your Defender compliance dashboard.&lt;/p&gt;
+
+&lt;p&gt;You must visit the Microsoft Defender for Cloud dashboard in the portal or enable Defender programmatically via API for it to start monitoring your resources. Even if you are just using the free version, you still need complete one of those actions to see your recommendations in the Security blade.&lt;/p&gt;
+
+&lt;p&gt;Defender for App Service costs $15/month per instance. If cost is a limiting factor for you, take this into consideration when enabling the enhanced security features. Defender gives you the ability to select which resources you want to be in scope and therefore charged for, which can help you reduce costs as needed. If you don’t enable Defender for App Service, you can still use the free version and have access to compliance against the Azure Security Benchmark.&lt;/p&gt;
+
+&lt;p&gt;If you choose to not enable the enhanced security features, that doesn’t mean your App Service isn’t secure or that you don’t have options to secure your apps. App Service as well as Azure have a number of built-in features and services that you can leverage to lock down and protect your apps based on your requirements. To learn more about App Service security, start with the &lt;a href=&quot;https://docs.microsoft.com/azure/app-service/security-recommendations&quot;&gt;security recommendations for App Service&lt;/a&gt;.&lt;/p&gt;</content><author><name>Azure App Service</name></author><summary type="html">If you’re an Azure portal user with App Service, you’ve most likely seen the Security item in the left-hand menu. This item comes from our partners from the recently re-branded Microsoft Defender for Cloud. If you aren’t familiar with Microsoft Defender for Cloud (formerly Azure Security Center and Azure Defender), it’s a tool for security posture management and threat protection. It aggregates compliance data and continually assesses your environments to give you a summary view of your security posture and allow you to streamline security management not just for your resources in Azure, but also for your resources and environments on-premises as well as in other cloud platforms (Defender for Cloud currently supports integration with AWS and GCP). For more information about Microsoft Defender for Cloud, check out the documentation.</summary></entry><entry><title type="html">Scala on App Service</title><link href="https://azure.github.io/AppService/2022/05/31/scala-on-app-service.html" rel="alternate" type="text/html" title="Scala on App Service" /><published>2022-05-31T00:00:00+00:00</published><updated>2022-05-31T00:00:00+00:00</updated><id>https://azure.github.io/AppService/2022/05/31/scala-on-app-service</id><content type="html" xml:base="https://azure.github.io/AppService/2022/05/31/scala-on-app-service.html">&lt;p&gt;Scala is an object-oriented programming language that can be compiled to run on the Java Virtual Machine (JVM). Using the Java runtime allows you to integrate with the enormous Java ecosystem and execute Scala programs anywhere the JVM is available. This includes Azure App Service with the Java SE runtime. The &lt;a href=&quot;https://www.playframework.com/&quot;&gt;Play Framework&lt;/a&gt; is a lightweight web application framework for Java and Scala that integrates all components and APIs needed for modern web application development.&lt;/p&gt;
+
+&lt;p&gt;Follow the tutorial below to deploy a Play framework Scala app onto Azure App Service.&lt;/p&gt;
+
+&lt;h2 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;/h2&gt;
+
+&lt;p&gt;To follow the steps in this tutorial you will need the following tools installed locally. (You can use &lt;em&gt;either&lt;/em&gt; the Azure CLI &lt;em&gt;or&lt;/em&gt; the Maven plugin. You don’t need both to complete this tutorial.)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/java/openjdk/download#openjdk-11&quot;&gt;Java 11&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.scala-sbt.org/download.html&quot;&gt;sbt v1.3.4 or greater&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://maven.apache.org/install.html&quot;&gt;Maven&lt;/a&gt; (Or install the Azure CLI)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/cli/azure/install-azure-cli&quot;&gt;Azure CLI&lt;/a&gt; (Or use Maven)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To check your sbt version, enter the following in a command window:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sbt sbtVersion
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;build-and-run-the-project&quot;&gt;Build and Run the Project&lt;/h2&gt;
+
+&lt;p&gt;This example Play project was created from a &lt;a href=&quot;https://github.com/playframework/play-samples/tree/2.8.x/play-scala-hello-world-tutorial&quot;&gt;seed template&lt;/a&gt;. It includes all Play components and an Akka HTTP server. The project is also configured with filters for Cross-Site Request Forgery (CSRF) protection and security headers.&lt;/p&gt;
+
+&lt;p&gt;To build and run the project:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;First clone the &lt;a href=&quot;https://github.com/Azure-Samples/scala-on-app-service&quot;&gt;Scala on App Service&lt;/a&gt; repository with the following command: &lt;code class=&quot;highlighter-rouge&quot;&gt;git clone https://github.com/Azure-Samples/scala-on-app-service&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Change directory into the example project directory: &lt;code class=&quot;highlighter-rouge&quot;&gt;cd scala-on-app-service&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Build the project by running &lt;code class=&quot;highlighter-rouge&quot;&gt;sbt run&lt;/code&gt;. The command builds and starts the embedded HTTP server. Since this downloads libraries and dependencies, the amount of time required depends partly on your internet connection speed.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;After the message &lt;code class=&quot;highlighter-rouge&quot;&gt;Server started, ...&lt;/code&gt; displays, enter the following URL in a browser: &lt;a href=&quot;http://localhost:9000&quot;&gt;http://localhost:9000&lt;/a&gt;. The Play application will respond with: &lt;code class=&quot;highlighter-rouge&quot;&gt;Welcome to the Hello World Scala POC Tutorial!&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Now that the application is working locally, let’s package the application into an executable .jar file that we can deploy onto Azure App Service.&lt;/p&gt;
+
+&lt;h2 id=&quot;assemble-and-test-jar-locally&quot;&gt;Assemble and Test JAR Locally&lt;/h2&gt;
+
+&lt;p&gt;Follow these steps to build a .jar file executable for a Java 11 runtime using sbt assembly.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;From the project root, run:&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; sbt assembly
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;This command produces an executable .jar file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;scala-on-app-service/target/scala-2.14/&lt;/code&gt; directory.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;To test the app locally, run the previously created .jar file:&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; java &lt;span class=&quot;nt&quot;&gt;-jar&lt;/span&gt; target/scala-2.13/scala-play-example-assembly-1.0.jar
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;The application should now be running at &lt;a href=&quot;http://localhost:80&quot;&gt;http://localhost:80&lt;/a&gt;. (Note that the port is now 80, as this is the default HTTP port expected on App Service when we deploy it in the next section.)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Open the application in your browser to ensure it works locally as an executable .jar.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Something interesting to note about creating an executable .jar using &lt;code class=&quot;highlighter-rouge&quot;&gt;sbt assembly&lt;/code&gt; is that it will inject all necessary Scala dependencies according to the &lt;code class=&quot;highlighter-rouge&quot;&gt;assemblyMergeStrategy&lt;/code&gt; defined in &lt;code class=&quot;highlighter-rouge&quot;&gt;build.sbt&lt;/code&gt;. This allows a native Scala app like this one to be executed in a Java-only environment. This also means that your production environment only needs to be running Java 11 and doesn’t need any Scala runtime dependencies since they’ve all been injected into the .jar file.&lt;/p&gt;
+
+&lt;h2 id=&quot;deploy-to-azure-app-service&quot;&gt;Deploy to Azure App Service&lt;/h2&gt;
+
+&lt;p&gt;You can deploy the .jar using either the Azure CLI or the Maven plugin. Follow the instructions below for your preferred tool.&lt;/p&gt;
+
+&lt;h3 id=&quot;deploy-as-jar-using-azure-cli&quot;&gt;Deploy as JAR using Azure CLI&lt;/h3&gt;
+
+&lt;p&gt;To deploy with the Azure CLI, run the following command from the project root:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;az webapp deploy &lt;span class=&quot;nt&quot;&gt;--type&lt;/span&gt; jar &lt;span class=&quot;nt&quot;&gt;--src-path&lt;/span&gt; target/scala-2.13/&amp;lt;project-name&amp;gt;-assembly-&amp;lt;version&amp;gt;.jar &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; &amp;lt;app-name&amp;gt; &lt;span class=&quot;nt&quot;&gt;--resource-group&lt;/span&gt; &amp;lt;resource-group&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Once complete, you should be able to access your Play Framework app at &lt;code class=&quot;highlighter-rouge&quot;&gt;https://&amp;lt;app-name&amp;gt;.azurewebsites.net&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;deploy-as-jar-using-maven&quot;&gt;Deploy as JAR using Maven&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;To use Maven, you’ll need a pom file. The last line of &lt;code class=&quot;highlighter-rouge&quot;&gt;scala-on-app-service/build.sbt&lt;/code&gt; handles maven repo creation for publishing. After assembling your .jar file with &lt;code class=&quot;highlighter-rouge&quot;&gt;sbt assembly&lt;/code&gt;, run the following command from the project root to generate a pom file:&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; sbt publish
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Copy the newly created pom file to the project root:&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nb&quot;&gt;cp &lt;/span&gt;maven-repo/com/example/scala-play-example_2.13/1.0/scala-play-example_2.13-1.0.pom pom.xml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Configure the webapp using the appropriate azure plugin for maven:&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; mvn com.microsoft.azure:azure-webapp-maven-plugin:2.5.0:config
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Update the app name and .jar file location in the newly modified pom.xml, for example:&lt;/p&gt;
+
+    &lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;appName&amp;gt;&lt;/span&gt;Scala-App-Name&lt;span class=&quot;nt&quot;&gt;&amp;lt;/appName&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;deployment&amp;gt;&lt;/span&gt;
+     &lt;span class=&quot;nt&quot;&gt;&amp;lt;resources&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;resource&amp;gt;&lt;/span&gt;
+             &lt;span class=&quot;nt&quot;&gt;&amp;lt;directory&amp;gt;&lt;/span&gt;${project.basedir}/target/scala-2.13&lt;span class=&quot;nt&quot;&gt;&amp;lt;/directory&amp;gt;&lt;/span&gt;
+             &lt;span class=&quot;nt&quot;&gt;&amp;lt;includes&amp;gt;&lt;/span&gt;
+             &lt;span class=&quot;nt&quot;&gt;&amp;lt;include&amp;gt;&amp;lt;app-name&amp;gt;&lt;/span&gt;-assembly-1.0.jar&lt;span class=&quot;nt&quot;&gt;&amp;lt;/include&amp;gt;&lt;/span&gt;
+             &lt;span class=&quot;nt&quot;&gt;&amp;lt;/includes&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;/resource&amp;gt;&lt;/span&gt;
+     &lt;span class=&quot;nt&quot;&gt;&amp;lt;/resources&amp;gt;&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;&amp;lt;/deployment&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Deploy to App Service with the following command:&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; mvn azure-webapp:deploy
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Update the application by running &lt;code class=&quot;highlighter-rouge&quot;&gt;sbt assembly&lt;/code&gt; followed by &lt;code class=&quot;highlighter-rouge&quot;&gt;mvn azure-webapp:deploy&lt;/code&gt; after making &amp;amp; testing changes locally.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/azure/app-service/configure-language-java&quot;&gt;Config Guide for Java on Azure App Service&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.playframework.com/documentation/2.8.x/SettingsAkkaHttp&quot;&gt;Akka Server Settings&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Azure App Service</name></author><category term="java" /><summary type="html">Build and run a Scala App on Azure App Service</summary></entry><entry><title type="html">gRPC support on Azure App Service</title><link href="https://azure.github.io/AppService/2022/05/23/gRPC-support-on-App-Service.html" rel="alternate" type="text/html" title="gRPC support on Azure App Service" /><published>2022-05-23T00:00:00+00:00</published><updated>2022-05-23T00:00:00+00:00</updated><id>https://azure.github.io/AppService/2022/05/23/gRPC-support-on-App-Service</id><content type="html" xml:base="https://azure.github.io/AppService/2022/05/23/gRPC-support-on-App-Service.html">&lt;p&gt;We are pleased to announce that gRPC is coming to Azure App Service for Linux workloads.&lt;/p&gt;
+
+&lt;p&gt;Using gRPC, you can utilize the remote procedure call framework to streamline messages between your client and server over HTTP/2. Using gRPC protocol over HTTP/2 enables the use of features like multiplexing to send multiple parallel requests over the same connection.&lt;/p&gt;
+
+&lt;p&gt;gRPC is currently available in EUAP with Private Preview for use with .NET Core 3.1 and .NET 6.&lt;/p&gt;
+
+&lt;p&gt;Please visit this tutorial &lt;a href=&quot;https://github.com/Azure/app-service-linux-docs/blob/master/HowTo/gRPC/use_gRPC_with_dotnet.md&quot;&gt;How-To deploy a .NET 6 gRPC app on App Service&lt;/a&gt; to try out gRPC on App Service today.&lt;/p&gt;</content><author><name>Azure App Service</name></author><category term="[&quot;gRPC&quot;]" /><summary type="html">We are pleased to announce that gRPC is coming to Azure App Service for Linux workloads.</summary></entry><entry><title type="html">Generally available: Enhanced network security features for App Service Basic SKU</title><link href="https://azure.github.io/AppService/2022/04/14/Enhanced-security-for-basic-sku.html" rel="alternate" type="text/html" title="Generally available: Enhanced network security features for App Service Basic SKU" /><published>2022-04-14T00:00:00+00:00</published><updated>2022-04-14T00:00:00+00:00</updated><id>https://azure.github.io/AppService/2022/04/14/Enhanced-security-for-basic-sku</id><content type="html" xml:base="https://azure.github.io/AppService/2022/04/14/Enhanced-security-for-basic-sku.html">&lt;p&gt;App Service now supports &lt;a href=&quot;https://docs.microsoft.com/azure/app-service/overview-vnet-integration&quot;&gt;VNet integration&lt;/a&gt; (outbound) and &lt;a href=&quot;https://docs.microsoft.com/azure/app-service/networking/private-endpoint&quot;&gt;private endpoints&lt;/a&gt; (inbound) all the way down to the &lt;a href=&quot;https://azure.microsoft.com/pricing/details/app-service/linux/&quot;&gt;Basic SKU&lt;/a&gt;. The App Service VNet integration feature enables your apps to access resources in or through a virtual network but doesn’t grant inbound private access to your apps. For inbound access, you need private endpoints, which allow clients located in your private network to securely access your apps over Private Link, which eliminates exposure from the public internet.&lt;/p&gt;
+
+&lt;p&gt;With this update, you can use our lower-cost tiers and achieve the same level of security that you could previously only achieve with our high-end SKUs. Note that if you want to downgrade an existing App Service Plan and still use VNet integration, you need to be on the newer App Service footprint to ensure you’re App Service Plan supports VNet integration for Basic SKU. For more details, see the VNet integration &lt;a href=&quot;https://docs.microsoft.com/azure/app-service/overview-vnet-integration#limitations&quot;&gt;limitations&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Learn how to enable &lt;a href=&quot;https://docs.microsoft.com/azure/app-service/configure-vnet-integration-enable&quot;&gt;virtual network integration&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Learn how to &lt;a href=&quot;https://docs.microsoft.com/azure/private-link/tutorial-private-endpoint-webapp-portal&quot;&gt;connect to a web app using an Azure Private endpoint&lt;/a&gt;.&lt;/p&gt;</content><author><name>Azure App Service</name></author><category term="networking" /><summary type="html">App Service now supports VNet integration (outbound) and private endpoints (inbound) all the way down to the Basic SKU. The App Service VNet integration feature enables your apps to access resources in or through a virtual network but doesn’t grant inbound private access to your apps. For inbound access, you need private endpoints, which allow clients located in your private network to securely access your apps over Private Link, which eliminates exposure from the public internet.</summary></entry><entry><title type="html">Public preview: Networking configuration options during Web App creation in the Azure Portal</title><link href="https://azure.github.io/AppService/2022/04/14/networking-tab-web-app-service-create-preview.html" rel="alternate" type="text/html" title="Public preview: Networking configuration options during Web App creation in the Azure Portal" /><published>2022-04-14T00:00:00+00:00</published><updated>2022-04-14T00:00:00+00:00</updated><id>https://azure.github.io/AppService/2022/04/14/networking-tab-web-app-service-create-preview</id><content type="html" xml:base="https://azure.github.io/AppService/2022/04/14/networking-tab-web-app-service-create-preview.html">&lt;p&gt;We are happy to announce that you can now enable &lt;a href=&quot;https://docs.microsoft.com/azure/app-service/overview-vnet-integration&quot;&gt;Virtual Network integration&lt;/a&gt; as well as &lt;a href=&quot;https://docs.microsoft.com/azure/app-service/networking/private-endpoint&quot;&gt;private endpoints&lt;/a&gt; for inbound access when creating Web Apps using the Azure Portal. Previously, you had to use the Azure CLI/PowerShell or ARM to configure these features when creating your apps.&lt;/p&gt;
+
+&lt;p&gt;Web Apps can be provisioned with an inbound address that is public to the internet or isolated to an Azure virtual network. Web Apps can also be provisioned with outbound traffic that is able to reach endpoints in a virtual network, be governed by network security groups, or be restricted by virtual network routes. Use the new Networking tab to configure these features when creating your apps so you can ensure a secure configuration from the start!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/AppService/media/2022/04/web-app-networking-tab.png&quot; alt=&quot;Web App creation Networking tab sample&quot; /&gt;&lt;/p&gt;</content><author><name>Azure App Service</name></author><category term="networking" /><summary type="html">We are happy to announce that you can now enable Virtual Network integration as well as private endpoints for inbound access when creating Web Apps using the Azure Portal. Previously, you had to use the Azure CLI/PowerShell or ARM to configure these features when creating your apps.</summary></entry><entry><title type="html">Public Preview: Codeless Monitoring for Windows Containers</title><link href="https://azure.github.io/AppService/2022/04/11/windows-containers-app-insights-preview.html" rel="alternate" type="text/html" title="Public Preview: Codeless Monitoring for Windows Containers" /><published>2022-04-11T00:00:00+00:00</published><updated>2022-04-11T00:00:00+00:00</updated><id>https://azure.github.io/AppService/2022/04/11/windows-containers-app-insights-preview</id><content type="html" xml:base="https://azure.github.io/AppService/2022/04/11/windows-containers-app-insights-preview.html">&lt;p&gt;We are happy to share that &lt;a href=&quot;https://docs.microsoft.com/azure/azure-monitor/app/codeless-overview&quot;&gt;Auto-Instrumentation&lt;/a&gt; of Application Insights for Windows Container applications is now in public preview! Auto-Instrumentation allows you to monitor your applications with Application Insights &lt;strong&gt;without changing your code&lt;/strong&gt;. When enabled, the App Service platform will configure and attach the agent to the application in your container. Once attached, metrics such as requests, dependencies, latency, and stack traces will flow into your Application Insights resource where you can analyze the data and set up alerts.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Auto-Instrumentation for Windows Containers on App Service currently supports .NET and Java applications. Node.js support is planned. For other stacks, consider adding the Application Insights SDK to your application.&lt;/p&gt;
+
+&lt;h2 id=&quot;enable-auto-instrumentation&quot;&gt;Enable Auto-Instrumentation&lt;/h2&gt;
+
+&lt;p&gt;You can enable Auto-Instrumentation from the &lt;strong&gt;Create&lt;/strong&gt; blade, or from the &lt;strong&gt;Application Insights&lt;/strong&gt; blade.&lt;/p&gt;
+
+&lt;h3 id=&quot;create-blade&quot;&gt;Create Blade&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Go to the &lt;a href=&quot;https://portal.azure.com/#create/Microsoft.WebSite&quot;&gt;Create Web App blade&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Provide a name for your web app, and select &lt;strong&gt;Docker Container&lt;/strong&gt; as the Publish type, and &lt;strong&gt;Windows&lt;/strong&gt; as the Operating System&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Go to the &lt;strong&gt;Monitoring&lt;/strong&gt; tab, and select &lt;strong&gt;Yes&lt;/strong&gt; to enable Application Insights&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/AppService/media/2022/04/windows-containers-create.png&quot; alt=&quot;Enabling App Insights&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Go to &lt;strong&gt;Review + Create&lt;/strong&gt; and click &lt;strong&gt;Create&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;That’s it! Once your container is deployed, Application Insights will attach automatically and begin sending metrics.&lt;/p&gt;
+
+&lt;h3 id=&quot;application-insights-blade&quot;&gt;Application Insights Blade&lt;/h3&gt;
+
+&lt;p&gt;If you already have a Windows Container web app, open it in the Azure Portal and go to the &lt;strong&gt;Application Insights (preview)&lt;/strong&gt; menu item.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Select &lt;strong&gt;Turn on Application Insights&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Select a &lt;strong&gt;Location&lt;/strong&gt; for your Application Insights resource to be created. (It’s suggested to create the resource in the same region as the Web App.)&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/AppService/media/2022/04/windows-containers-ai-blade.png&quot; alt=&quot;Enabling App Insights&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;(Optional) use the language tabs at the bottom for &lt;strong&gt;.NET&lt;/strong&gt;, &lt;strong&gt;.NET Core&lt;/strong&gt;, and &lt;strong&gt;Java&lt;/strong&gt; to configure the agent&lt;/li&gt;
+  &lt;li&gt;Click &lt;strong&gt;Apply&lt;/strong&gt; to save your changes&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;And you’re done! Your web app will restart and Application Insights will attach automatically to begin sending metrics.&lt;/p&gt;
+
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/azure/app-service/quickstart-custom-container?tabs=dotnet&amp;amp;pivots=container-windows&quot;&gt;Quickstart: Windows Containers on App Service&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview&quot;&gt;Overview of Application Insights&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Azure App Service</name></author><category term="windows containers" /><summary type="html">We are happy to share that Auto-Instrumentation of Application Insights for Windows Container applications is now in public preview! Auto-Instrumentation allows you to monitor your applications with Application Insights without changing your code. When enabled, the App Service platform will configure and attach the agent to the application in your container. Once attached, metrics such as requests, dependencies, latency, and stack traces will flow into your Application Insights resource where you can analyze the data and set up alerts.</summary></entry><entry><title type="html">Auto-Healing and Crash Monitoring integration with Azure Monitor</title><link href="https://azure.github.io/AppService/2022/04/05/Announcing-Azure-Monitor-Integration-with-Crash-Monitoring-copy.html" rel="alternate" type="text/html" title="Auto-Healing and Crash Monitoring integration with Azure Monitor" /><published>2022-04-05T00:00:00+00:00</published><updated>2022-04-05T00:00:00+00:00</updated><id>https://azure.github.io/AppService/2022/04/05/Announcing-Azure-Monitor-Integration-with-Crash-Monitoring%20copy</id><content type="html" xml:base="https://azure.github.io/AppService/2022/04/05/Announcing-Azure-Monitor-Integration-with-Crash-Monitoring-copy.html">&lt;p&gt;&lt;a href=&quot;https://azure.github.io/AppService/2018/09/10/Announcing-the-New-Auto-Healing-Experience-in-App-Service-Diagnostics.html&quot;&gt;Auto-healing&lt;/a&gt; is a heavily used diagnostic feature of Azure App Service that allows end-users to configure a rich set of triggers that can be used to mitigate an app once it starts misbehaving. It not only allows you to mitigate the app from a bad situation but it also allows customers to capture diagnostic data that helps them debug the issues later.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://azure.github.io/AppService/2020/08/11/Crash-Monitoring-Feature-in-Azure-App-Service.html&quot;&gt;Crash Monitoring&lt;/a&gt; and &lt;a href=&quot;https://azure.github.io/AppService/2021/03/01/Proactive-Crash-Monitoring-in-Azure-App-Service.html&quot;&gt;Proactive Crash Monitoring&lt;/a&gt; allow end-users to effectively diagnose and debug application crashes (process exits due to unhandled exceptions) easily.&lt;/p&gt;
+
+&lt;p&gt;One of the most asked features for both these features was the ability to view historical information about when these tools were triggered and what conditions cause them to trigger. Customers have also asked us to be able to view this information for a longer duration as by default the views available in &lt;em&gt;Diagnose and Solve&lt;/em&gt; blade show you a maximum of 24 hours of information.&lt;/p&gt;
+
+&lt;h3 id=&quot;announcing-auto-healing-and-crash-monitoring-integration-with-azure-monitor&quot;&gt;Announcing Auto-healing and Crash Monitoring integration with Azure Monitor&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;We are happy to announce the integration of App Services Auto-Healing and Crash Monitoring feature with Azure Monitor&lt;/em&gt;. With this integration, you can identify when an app was recycled, the number of times it was recycled and due to what condition. You can also identify application code that leads to a crash for your app. Azure Monitor integration allows you to configure alerts and actions to be taken when any of these events are triggered. You can choose for how long you want this data to be retained and use &lt;strong&gt;Log Analytics&lt;/strong&gt; to query this data and setup alerts as per your requirement.&lt;/p&gt;
+
+&lt;h3 id=&quot;integrating-auto-healing-and-crash-monitoring-with-azure-monitor&quot;&gt;Integrating Auto-Healing and Crash Monitoring with Azure Monitor&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;To integrate Azure Monitor with these diagnostic tools, navigate to &lt;strong&gt;Diagnostic Settings&lt;/strong&gt; for your App in the Azure Portal and click on &lt;strong&gt;Add Diagnostic Setting&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;Give a descriptive setting name and make sure &lt;strong&gt;AppServicePlatformLogs&lt;/strong&gt; category is selected&lt;/li&gt;
+  &lt;li&gt;Choose the destination per your choice. In the below example, I choosing to send the data to a Log Analytics workspace and I chose an existing Log Analytics workspace in my subscription.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/AppService/media/2022/04/AppServicePlatformLogs-AzureMonitor.png&quot; alt=&quot;Enabling AppService Platform logs in Azure Monitor&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And that’s it !!!&lt;/p&gt;
+
+&lt;h3 id=&quot;viewing-auto-healing-events-in-log-analytics&quot;&gt;Viewing Auto-Healing events in Log Analytics&lt;/h3&gt;
+
+&lt;p&gt;Whenever Auto-Healing takes action based on the configured triggers, the events can be viewed in &lt;strong&gt;AppServicePlatformLogs&lt;/strong&gt; table in log analytics workspace. To view the data, just click on &lt;strong&gt;Logs&lt;/strong&gt; for your App and run a query like below&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;AppServicePlatformLogs
+| where TimeGenerated &amp;gt; ago(1d)
+| where OperationName startswith &quot;AutoHealing&quot;
+| project TimeGenerated, OperationName, Level, Message, _ResourceId
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/AppService/media/2022/04/AutoHealingEventsQuery-AzureMonitor.png&quot; alt=&quot;AutoHealing Events in Azure Monitor&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/AppService/media/2022/04/AutoHealingRecords-AzureMonitor.png&quot; alt=&quot;AutoHealing Event Records in Azure Monitor&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The &lt;strong&gt;Message&lt;/strong&gt; column helps identifying the action invoked and the trigger. For e.g. in the above event, we see this&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Worker Process successfully launched &lt;strong&gt;custom action ‘D:\home\data\DaaS\bin\DaasConsole.exe’&lt;/strong&gt; due to &lt;strong&gt;‘Total Requests’&lt;/strong&gt; limit&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The &lt;strong&gt;OperationName&lt;/strong&gt; column will have one of the three values based on the action chosen in the Auto-Healing configuration.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;AutoHealingCustomAction&lt;/li&gt;
+  &lt;li&gt;AutoHealingRecycle&lt;/li&gt;
+  &lt;li&gt;AutoHealingLogEvent&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;viewing-crash-monitoring-events-in-log-analytics&quot;&gt;Viewing Crash Monitoring events in Log Analytics&lt;/h3&gt;
+
+&lt;p&gt;Whenever crash monitoring or proactive crash monitoring captures a memory dump or records a call-stack of the crashing thread, records will be generated in the &lt;strong&gt;AppServicePlatformLogs&lt;/strong&gt; table in Log Analytics workspace. Information about the dump file and the time the dump file is copied to storage will also be logged. To view the data, just click on &lt;strong&gt;Logs&lt;/strong&gt; for your App and use a query like below&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;AppServicePlatformLogs
+| where TimeGenerated &amp;gt; ago(1d)
+| where OperationName =~ 'CrashMonitoring' or OperationName =~ 'ProactiveCrashMonitoring'
+| project TimeGenerated, OperationName, ActivityId, Level, Message, Exception, StackTrace, _ResourceId
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;You may have to choose the &lt;strong&gt;ActivityId&lt;/strong&gt;, &lt;strong&gt;Exception&lt;/strong&gt; and &lt;strong&gt;StackTrace&lt;/strong&gt; columns from the &lt;strong&gt;Columns&lt;/strong&gt; side panel to see all the above information&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/AppService/media/2022/04/ProactiveCrashMonitoringEvents-AzureMonitor.png&quot; alt=&quot;Crash Monitoring Events in Azure Monitor&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/AppService/media/2022/04/ProactiveCrashMonitoringResults-AzureMonitor.png&quot; alt=&quot;Crash Monitoring Event Results in Azure Monitor&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;configuring-alerts-on-these-events&quot;&gt;Configuring alerts on these Events&lt;/h3&gt;
+
+&lt;p&gt;To configure an alert, write the Log Analytics query as per your requirement and choose &lt;strong&gt;New Alert Rule&lt;/strong&gt; from the ribbon and follow the rest of the configuration. For more information, refer to &lt;a href=&quot;https://docs.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-log&quot;&gt;Create, view, and manage log alerts using Azure Monitor&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;We hope this helps in identifying auto-healing and crash monitoring invocations easily and set up alerts around these events which will help you effectively diagnose and troubleshoot your apps hosted on App Service.&lt;/p&gt;
+
+&lt;p&gt;Happy Debugging!&lt;/p&gt;
+
+&lt;h3 id=&quot;resources&quot;&gt;Resources&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://azure.github.io/AppService/2019/11/01/App-Service-Integration-with-Azure-Monitor.html&quot;&gt;App Service Integration with Azure Monitor&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://azure.github.io/AppService/2020/08/11/Crash-Monitoring-Feature-in-Azure-App-Service.html&quot;&gt;Crash Monitoring in Azure App Service&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://azure.github.io/AppService/2021/03/01/Proactive-Crash-Monitoring-in-Azure-App-Service.html&quot;&gt;Proactive Crash Monitoring in Azure App Service&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://azure.github.io/AppService/2018/09/10/Announcing-the-New-Auto-Healing-Experience-in-App-Service-Diagnostics.html&quot;&gt;Announcing the New Auto Healing Experience in App Service Diagnostics&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-log&quot;&gt;Create, view, and manage log alerts using Azure Monitor&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Azure App Service</name></author><category term="[&quot;diagnostics&quot;]" /><summary type="html">Auto-healing is a heavily used diagnostic feature of Azure App Service that allows end-users to configure a rich set of triggers that can be used to mitigate an app once it starts misbehaving. It not only allows you to mitigate the app from a bad situation but it also allows customers to capture diagnostic data that helps them debug the issues later.</summary></entry><entry><title type="html">App Service Web Apps, Functions, and Logic Apps (Standard) *.azurewebsites.net TLS certificate changes and what you need to know</title><link href="https://azure.github.io/AppService/2022/03/22/Default-Cert-Renew.html" rel="alternate" type="text/html" title="App Service Web Apps, Functions, and Logic Apps (Standard) *.azurewebsites.net TLS certificate changes and what you need to know" /><published>2022-03-22T00:00:00+00:00</published><updated>2022-03-22T00:00:00+00:00</updated><id>https://azure.github.io/AppService/2022/03/22/Default-Cert-Renew</id><content type="html" xml:base="https://azure.github.io/AppService/2022/03/22/Default-Cert-Renew.html">&lt;p&gt;&lt;strong&gt;This blog contains information about *.azurewebsites.net TLS certificate changes for web apps, functions, and logic apps (standard). Customers should not be impacted by this change.&lt;/strong&gt; The scope of services affected includes web apps, functions, and logic apps (standard); logic apps (consumption) are not impacted. This change is limited to public Azure cloud; government clouds are not affected.&lt;/p&gt;
+
+&lt;p&gt;Every web app, function, or logic app (standard) has its own default hostname that goes by &lt;em&gt;“&amp;lt;resource-name&amp;gt;.azurewebsites.net”&lt;/em&gt; where App Service secures it with a wildcard &lt;em&gt;*.azurewebsites.net&lt;/em&gt; TLS certificate. The current TLS certificate issued by Baltimore CyberTrust Root CA is set to expire on July 7th, 2022. Starting April 2022, App Service will begin renewing these TLS certificates and instead use certificates issued by DigiCert Global Root G2 CA. Due to the distributed asynchronous nature of the renewal process, there isn’t an exact date when the certificate will be rotated and visible to individual web apps, functions, and logic apps (standard).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;We expect that this change will be a non-event and will not impact customers. However, you may be impacted if an application has incorrectly taken a hard dependency on the *.azurewebsites.net TLS certificate, for example by way of “certificate pinning”.&lt;/strong&gt; Certificate pinning is a practice where an application only allows a specific list of acceptable Certificate Authorities (CAs), public keys, thumbprints, etc. &lt;strong&gt;Applications should never pin to the *.azurewebsites.net TLS certificate.&lt;/strong&gt; Applications requiring certificate stability should use custom domains in conjunction with custom TLS certificates for those domains. You can refer to the &lt;a href=&quot;#recommended-best-practices&quot;&gt;recommended best practices&lt;/a&gt; section of this article for more information.&lt;/p&gt;
+
+&lt;h2 id=&quot;recommended-best-practices-&quot;&gt;Recommended best practices &lt;a name=&quot;recommended-best-practices&quot;&gt;&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;Certificate pinning of *.azurewebsites.net TLS certificates is not recommended because the *.azurewebsites.net TLS certificate could be rotated anytime given the nature of App Service as a Platform as a Service (PaaS). In the event that the service rotates the App Service default wildcard TLS certificate, certificate pinned applications will break and disrupt the connectivity for applications that are hardcoded to a specific set of certificate attributes. The periodicity with which the *.azurewebsites.net TLS certificate is rotated is also not guaranteed since the rotation frequency can change at any time.&lt;/p&gt;
+
+&lt;p&gt;If an application needs to rely on certificate pinning behavior, it is recommended to add a custom domain to a web app, function, or logic app (standard) and provide a custom TLS certificate for the domain which can then be relied on for certificate pinning.&lt;/p&gt;
+
+&lt;p&gt;Note that applications which rely on certificate pinning should also not have a hard dependency on an App Service Managed Certificate. App Service Managed Certificates could be rotated anytime, leading to similar problems for applications that rely on stable certificate properties. It is best practice to provide a custom TLS certificate for applications that rely on certificate pinning.&lt;/p&gt;</content><author><name>Azure App Service</name></author><category term="certsdomains" /><summary type="html">This blog contains information about *.azurewebsites.net TLS certificate changes for web apps, functions, and logic apps (standard). Customers should not be impacted by this change. The scope of services affected includes web apps, functions, and logic apps (standard); logic apps (consumption) are not impacted. This change is limited to public Azure cloud; government clouds are not affected.</summary></entry><entry><title type="html">Migrating your Windows container apps from the Premium Container SKU (Preview) to Premium V3 SKU</title><link href="https://azure.github.io/AppService/2022/03/02/Migrating-your-Windows-conainer-apps-from-Premium-Container-SKU-(Preview)-to-Premium-V3-SKU.html" rel="alternate" type="text/html" title="Migrating your Windows container apps from the Premium Container SKU (Preview) to Premium V3 SKU" /><published>2022-03-02T00:00:00+00:00</published><updated>2022-03-02T00:00:00+00:00</updated><id>https://azure.github.io/AppService/2022/03/02/Migrating-your-Windows-conainer-apps-from-Premium-Container-SKU-(Preview)-to-Premium-V3-SKU</id><content type="html" xml:base="https://azure.github.io/AppService/2022/03/02/Migrating-your-Windows-conainer-apps-from-Premium-Container-SKU-(Preview)-to-Premium-V3-SKU.html">&lt;p&gt;The Premium Container SKU will &lt;strong&gt;not&lt;/strong&gt; be moving out of preview status and will be retired on &lt;strong&gt;30th June 2022&lt;/strong&gt;.  Please move your applications to the &lt;strong&gt;Premium V3 SKU&lt;/strong&gt; ahead of this date if you want to continue running your Windows container workloads.   The Premium V3 SKU is SLA-backed and supports Windows containers.  In addition to general availabilty of support for Windows containers, Premium V3 provides enhanced performance for production applications, virtual network connectivity and new pricing options including Dev / Test, Pay-as-you-Go, 1-year and 3-year reserved instance pricing.  See additional details &lt;a href=&quot;https://docs.microsoft.com/azure/app-service/app-service-configure-premium-tier&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you have an application that is using the Premium Container SKU (Preview) and you would like to move to the new Premium V3 SKU, you will need to copy and re-deploy your application to a Premium V3 App Service Plan. The following is an example on how to do this using the clone functionality via Azure CLI in PowerShell.&lt;/p&gt;
+
+&lt;h2 id=&quot;tutorial&quot;&gt;Tutorial&lt;/h2&gt;
+
+&lt;h3 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;/h3&gt;
+
+&lt;p&gt;This tutorial uses &lt;code class=&quot;highlighter-rouge&quot;&gt;Az.Accounts&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Az.Websites&lt;/code&gt; PowerShell modules. Follow the instructions &lt;a href=&quot;https://docs.microsoft.com/en-us/powershell/azure/install-az-ps?view=azps-7.2.0#installation&quot;&gt;here&lt;/a&gt; before starting to install the modules.&lt;/p&gt;
+
+&lt;p&gt;You will need your:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Subscription ID: “&amp;lt; subscription-id &amp;gt;”&lt;/li&gt;
+  &lt;li&gt;Resource Group: “my-pc-resource-group”&lt;/li&gt;
+  &lt;li&gt;Web App Name: “my-pc-web-app”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;prepare-your-environment&quot;&gt;Prepare your environment&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;To get started you will first need to connect your Azure account&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; Connect-AzAccount
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Then, set your subscription in PowerShell to the context of your Web App&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; Set-AzContext &lt;span class=&quot;nt&quot;&gt;-Subscription&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;subscription_id&amp;gt;&quot;&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;copy-your-premium-container-site&quot;&gt;Copy your Premium Container site&lt;/h3&gt;
+
+&lt;p&gt;Next, copy the Premium Container site information into a PowerShell variable. You will use this variable when you clone the app&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$myPCApp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Get-AzWebApp &lt;span class=&quot;nt&quot;&gt;-ResourceGroupName&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;my-pc-resource-group&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--Name&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;my-pc-web-app&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;create-your-premium-v3-app-service-plan&quot;&gt;Create your Premium V3 App Service Plan&lt;/h3&gt;
+
+&lt;p&gt;Create the new App Service Plan that your site will be cloned to. Be sure to use the ‘’–hyper-v’’ parameter so it will support your Windows container workload. Here you will also define your new resource group and app name.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;az appservice plan create &lt;span class=&quot;nt&quot;&gt;--resource-group&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;my-pv3-resource-group&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;my-pv3-app-service-plan&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--hyper-v&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--location&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;East US&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--sku&lt;/span&gt; p1v3 &lt;span class=&quot;nt&quot;&gt;--subscription&lt;/span&gt; 
+&amp;lt;subscription-id&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;clone-your-premium-container-application-to-the-new-premium-v3-app-service-plan&quot;&gt;Clone your Premium Container application to the new Premium V3 App Service Plan&lt;/h3&gt;
+
+&lt;p&gt;Use the following PowerShell command to clone your existing Premium Container app to your Hyper-V enabled Premium V3 App Service Plan. Here you will use the $myPCApp variable defined earlier as your -SourceWebApp value.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;New-AzWebApp &lt;span class=&quot;nt&quot;&gt;-ResourceGroupName&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;my-pv3-resource-group&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-Name&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;my-pv3-app&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-Location&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;East US&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-AppServicePlan&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;my-pv3-app-service-plan&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-SourceWebApp&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$myPCApp&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;After running this command you should now have your cloned Premium Container application in a new Premium V3 App Service Plan.&lt;/p&gt;
+
+&lt;h3 id=&quot;resources&quot;&gt;Resources&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/azure/app-service/app-service-configure-premium-tier&quot;&gt;Configure Premium V3 tier for Azure App Service&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://techcommunity.microsoft.com/t5/apps-on-azure-blog/migrate-modernize-net-applications-with-azure/ba-p/1696499&quot;&gt;Migrate .NET apps to Azure&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://techcommunity.microsoft.com/t5/apps-on-azure-blog/what-s-new-in-azure-app-service-fall-ignite-2021-edition/ba-p/2901581&quot;&gt;Windows Containers on ASEv3&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://azure.microsoft.com/updates/app-service-announces-general-availability-of-windows-container-support/&quot;&gt;Windows Containers GA&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Azure App Service</name></author><category term="windows containers" /><summary type="html">The Premium Container SKU will not be moving out of preview status and will be retired on 30th June 2022. Please move your applications to the Premium V3 SKU ahead of this date if you want to continue running your Windows container workloads. The Premium V3 SKU is SLA-backed and supports Windows containers. In addition to general availabilty of support for Windows containers, Premium V3 provides enhanced performance for production applications, virtual network connectivity and new pricing options including Dev / Test, Pay-as-you-Go, 1-year and 3-year reserved instance pricing. See additional details here.</summary></entry></feed>
